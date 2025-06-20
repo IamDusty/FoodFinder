@@ -1,0 +1,26 @@
+{
+    "name": "FoodFinder - Discover Your Next Meal",
+    "short_name": "FoodFinder",
+    "description": "Discover amazing restaurants near you when you can't decide what to eat",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff6b6b",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "categories": ["food", "lifestyle", "utilities"],
+    "lang": "en"
+}

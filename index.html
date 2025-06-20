@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFinder - Discover Your Next Meal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff6b6b">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍽️%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <i class="fas fa-utensils"></i>
+                        <h1>FoodFinder</h1>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="favoritesBtn">
+                            <i class="fas fa-heart"></i>
+                            Favorites (<span id="favoritesCount">0</span>)
+                        </button>
+                        <button class="btn btn-primary" id="locationBtn">
+                            <i class="fas fa-location-dot"></i>
+                            Update Location
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Welcome Section -->
+                <section class="welcome" id="welcomeSection">
+                    <div class="welcome-content">
+                        <h2>Can't decide what to eat?</h2>
+                        <p>Let us help you discover amazing restaurants near you!</p>
+                        <button class="btn btn-primary btn-large" id="findRestaurantsBtn">
+                            <i class="fas fa-search"></i>
+                            Find Restaurants Near Me
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Loading State -->
+                <section class="loading" id="loadingSection" style="display: none;">
+                    <div class="loading-content">
+                        <div class="spinner"></div>
+                        <p>Finding delicious restaurants near you...</p>
+                    </div>
+                </section>
+
+                <!-- Restaurant Cards -->
+                <section class="restaurants" id="restaurantsSection" style="display: none;">
+                    <div class="restaurants-header">
+                        <h2>Restaurant Recommendations</h2>
+                        <button class="btn btn-outline" id="refreshAllBtn">
+                            <i class="fas fa-refresh"></i>
+                            Get New Suggestions
+                        </button>
+                    </div>
+                    <div class="restaurant-grid" id="restaurantGrid">
+                        <!-- Restaurant cards will be dynamically inserted here -->
+                    </div>
+                </section>
+
+                <!-- Favorites Modal -->
+                <div class="modal" id="favoritesModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Your Favorite Restaurants</h3>
+                            <button class="modal-close" id="closeFavoritesModal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="favoritesList">
+                                <div class="empty-state">
+                                    <i class="fas fa-heart"></i>
+                                    <p>No favorites yet! Start adding restaurants you love.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Modal -->
+                <div class="modal" id="locationModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Update Your Location</h3>
+                            <button class="modal-close" id="closeLocationModal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="location-options">
+                                <button class="btn btn-primary btn-full" id="useCurrentLocation">
+                                    <i class="fas fa-location-crosshairs"></i>
+                                    Use Current Location
+                                </button>
+                                <div class="divider">or</div>
+                                <div class="input-group">
+                                    <input type="text" id="manualLocation" placeholder="Enter city, address, or zip code">
+                                    <button class="btn btn-primary" id="setManualLocation">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="current-location" id="currentLocationDisplay">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Location not set</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 FoodFinder. Made with <i class="fas fa-heart"></i> for food lovers.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
